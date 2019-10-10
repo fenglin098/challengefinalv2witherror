@@ -14,6 +14,7 @@ public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+    private String photo;
 
     @NotNull
     @Size(min=1)
@@ -26,6 +27,7 @@ public class Message {
     @NotNull
     @Size(min=1)
     private String sentby;
+
 
 
     public long getId() {
@@ -58,6 +60,14 @@ public class Message {
 
     public void setSentby(String sentby) {
         this.sentby = sentby;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 }
 

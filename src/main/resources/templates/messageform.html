@@ -11,7 +11,7 @@
 <div class="container-fluid">
     <div class="jumbotron">
         <h1 align="center">Message Form</h1>
-        <form action="#" th:action="@{/process}" th:object="${message}" method="post">
+        <form action="#" th:action="@{/process}" th:object="${message}" method="post" enctype="multipart/form-data">
             <input type="hidden" th:field="*{id}" />
             Content :<input type="text" th:field="*{content}" />
             <span th:if="${#fields.hasErrors('content')}"
@@ -22,6 +22,7 @@
             Sent By :<input type="text" th:field="*{sentby}" />
             <span th:if="${#fields.hasErrors('sentby')}"
                   th:errors="*{sentby}"></span><br /><br />
+            <input type="file" name="file" /><br />
             <input type="submit" value="Submit" />
         </form>
     </div>
