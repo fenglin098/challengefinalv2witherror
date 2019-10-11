@@ -9,7 +9,7 @@
 <body>
 <div th:replace="base :: navlinks"></div>
 <div class="container-fluid">
-    <div class="jumbotron">
+    <div class="jumbotron" style="background-image: url(https://res.cloudinary.com/dw2hl1oiq/image/upload/v1570820643/yemvhkxris1tv31vztr6.jpg); background-size: 100%;">
         <p class="h2">Message Form</p><br/>
         <form action="#" th:action="@{/process}" th:object="${message}" method="post" enctype="multipart/form-data">
             <input type="hidden" th:field="*{id}" />
