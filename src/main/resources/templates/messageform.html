@@ -10,7 +10,7 @@
 <div th:replace="base :: navlinks"></div>
 <div class="container-fluid">
     <div class="jumbotron">
-        <h1 align="center">Message Form</h1>
+        <p class="h2">Message Form</p><br/>
         <form action="#" th:action="@{/process}" th:object="${message}" method="post" enctype="multipart/form-data">
             <input type="hidden" th:field="*{id}" />
             Content :<input type="text" th:field="*{content}" />
