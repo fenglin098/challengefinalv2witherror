@@ -33,14 +33,7 @@ public class HomeController {
     }
 
     @PostMapping("/process")
-    public String processForm(@Valid Message message, BindingResult result){
-        if (result.hasErrors()){
-            return "messageform";
-        }
-        messageRepository.save(message);
-        return "redirect:/";
-    }
-    public String processPhoto(@ModelAttribute Message message, @RequestParam("file")MultipartFile file){
+    public String processMessage(@ModelAttribute Message message, @RequestParam("file")MultipartFile file){
         if (file.isEmpty()){
             return "redirect:/add";
         }
