@@ -17,14 +17,9 @@
         <h3 th:text="${message.content}"></h3>
         <h6 th:text="${message.posteddate}"></h6>
         <h6 th:text="${message.sentby}"></h6>
-        <tr th:each="message : ${messages}">
-            <td>
-                <a th:href="@{/update/{id}(id=${message.id})}">Update</a>
-                <a th:href="@{/detail/{id}(id=${message.id})}">Details</a>
-                <a th:href="@{/delete/{id}(id=${message.id})}">Delete</a>
-            </td>
-        </tr>
-
+        <a th:href="@{/update/{id}(id=${message.id})}">Update</a>
+        <a th:href="@{/detail/{id}(id=${message.id})}">Details</a>
+        <a th:href="@{/delete/{id}(id=${message.id})}">Delete</a>
     </div>
     </div>
 </div>

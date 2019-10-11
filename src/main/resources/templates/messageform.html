@@ -22,7 +22,7 @@
             Sent By :<input type="text" th:field="*{sentby}" />
             <span th:if="${#fields.hasErrors('sentby')}"
                   th:errors="*{sentby}"></span><br /><br />
-            <input type="file" name="file" /><br />
+            <input type="file" name="file" /><br /><br />
             <input class="btn btn-primary" type="submit" value="Submit">
         </form>
     </div>
