@@ -2,27 +2,28 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Title</title>
+    <title>Message Board</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
 <nav th:replace="base :: navlinks"></nav>
 <div class="container-fluid">
     <div class="jumbotron" style="background-image: url(https://res.cloudinary.com/dw2hl1oiq/image/upload/v1570820643/yemvhkxris1tv31vztr6.jpg); background-size: 100%;">
-        <div class="row">
-            <div class="col">
-                <div th:each="message : ${messages}">
-                    <div th:if="${message.photo} != null">
-                        <img th:src="${message.photo}" class="img-thumbnail" /><hr /></div>
-                    <h3 th:text="${message.content}"></h3>
-                    <h6 th:text="${message.posteddate}"></h6>
-                    <h6 th:text="${message.sentby}"></h6>
+        <div th:each="message : ${messages}">
+            <div class="card" style="width: 18rem;">
+                <h5 th:text="${message.sentby}" class="card-title"></h5>
+                <div th:if="${message.photo} != null">
+                    <img th:src="${message.photo}" class="card-img-top">
+                    <div class="card-body">
+                        <p th:text="${message.content}" class="card-text"></p>
+                        <p th:text="${message.posteddate}" class="card-text"></p>
+                    </div>
+                </div>
                     <div class="btn-group" role="group" aria-label="Basic example">
                         <a th:href="@{/update/{id}(id=${message.id})}"><button type="button" class="btn-group btn-group-sm">Update</button></a>
                         <a th:href="@{/detail/{id}(id=${message.id})}"><button type="button" class="btn-group btn-group-sm">Details</button></a>
                         <a th:href="@{/delete/{id}(id=${message.id})}"><button type="button" class="btn-group btn-group-sm">Delete</button></a>
                     </div>
-                </div>
             </div>
         </div>
     </div>
