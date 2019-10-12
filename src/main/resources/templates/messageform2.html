@@ -18,18 +18,15 @@
                     <p align="center" class="h2">Message Form</p><br/>
                     <form action="#" th:action="@{/process}" th:object="${message}" method="post" enctype="multipart/form-data">
                         <input type="hidden" th:field="*{id}" />
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Content</label>
-                            <input type="text" th:field="*{content}" class="form-control" id="exampleInputEmail1" placeholder="content" />
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Posted Date</label>
-                            <input type="text" th:field="*{posteddate}" class="form-control" id="exampleInputPassword1" placeholder="date" />
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword2">Sent By</label>
-                            <input type="text" th:field="*{sentby}" class="form-control" id="exampleInputPassword2" placeholder="your name" />
-                        </div>
+                        Content :<input type="text" th:field="*{content}" />
+                        <span th:if="${#fields.hasErrors('content')}"
+                              th:errors="*{content}"></span><br />
+                        Posted Date :<input type="text" th:field="*{posteddate}" />
+                        <span th:if="${#fields.hasErrors('posteddate')}"
+                              th:errors="*{posteddate}"></span><br />
+                        Sent By :<input type="text" th:field="*{sentby}" />
+                        <span th:if="${#fields.hasErrors('sentby')}"
+                              th:errors="*{sentby}"></span><br /><br />
                         <input type="file" name="file" /><br /><br />
                         <input class="btn btn-info" type="submit" value="Submit">
                     </form>
