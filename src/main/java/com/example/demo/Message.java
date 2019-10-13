@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Date;
 
 @Entity
 public class Message {
@@ -17,18 +18,16 @@ public class Message {
     private String photo;
 
     @NotNull
-    @Size(min=1)
+    @Size(min = 1)
     private String content;
 
     @NotNull
-    @Size(min=4)
-    private String posteddate;
+    @Size(min = 4)
+    private Date posteddate;
 
     @NotNull
-    @Size(min=1)
+    @Size(min = 1)
     private String sentby;
-
-
 
     public long getId() {
         return id;
@@ -36,6 +35,14 @@ public class Message {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
     public String getContent() {
@@ -46,11 +53,11 @@ public class Message {
         this.content = content;
     }
 
-    public String getPosteddate() {
+    public Date getPosteddate() {
         return posteddate;
     }
 
-    public void setPosteddate(String posteddate) {
+    public void setPosteddate(Date posteddate) {
         this.posteddate = posteddate;
     }
 
@@ -61,13 +68,7 @@ public class Message {
     public void setSentby(String sentby) {
         this.sentby = sentby;
     }
-
-    public String getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(String photo) {
-        this.photo = photo;
-    }
 }
+
+
 
