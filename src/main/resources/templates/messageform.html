@@ -6,10 +6,10 @@
     <title>Message Form</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body>
+<body style="background-image: url(https://res.cloudinary.com/dw2hl1oiq/image/upload/v1570917714/background_h5prjy.jpg); background-size: 100%;">
 <div th:replace="base :: navlinks"></div>
-<div class="container-fluid">
-    <div class="jumbotron" style="background-image: url(https://res.cloudinary.com/dw2hl1oiq/image/upload/v1570820643/yemvhkxris1tv31vztr6.jpg); background-size: 100%;">
+<div class="container" >
+    <div class="jumbotron">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -17,17 +17,17 @@
                 <div class="col-6">
                     <p align="center" class="h2">Message Form</p><br/>
                     <form action="#" th:action="@{/process}" th:object="${message}" method="post" enctype="multipart/form-data">
-                        <input type="hidden" th:field="*{id}" />
-                        <div class="form-row">
-                            <div class="col">
-                                <input type="text" th:field="*{sentby}" class="form-control" placeholder="Name">
-                            </div>
-                            <div class="col">
-                                <input type="text" th:field="*{posteddate}" class="form-control" placeholder="Date"><br />
-                            </div>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput">Content</label>
+                            <input type="text" th:field="*{content}" class="form-control" id="formGroupExampleInput" placeholder="Enter your message here">
                         </div>
                         <div class="form-group">
-                            <textarea th:field="*{content}" class="form-control" placeholder="Your message here" rows="3"></textarea>
+                            <label for="formGroupExampleInput2">Posted Date</label>
+                            <input type="text" th:field="*{posteddate}" class="form-control" id="formGroupExampleInput2" placeholder="Date">
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2">Sent By</label>
+                            <input type="text" th:field="*{sentby}" class="form-control" id="formGroupExampleInput2" placeholder="Your name">
                         </div>
                         <input type="file" name="file" /><br /><br />
                         <input class="btn btn-info" type="submit" value="Submit">
